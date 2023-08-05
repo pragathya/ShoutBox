@@ -75,6 +75,8 @@ def accept_clients(the_server, y):
 
         # use a thread so as not to clog the gui thread
         threading._start_new_thread(send_receive_client_message, (client, addr))
+        #The purpose of the new thread created is to manage the communication with a specific client independently, 
+#allowing the main thread to continue accepting new client connections without waiting for each client's communication to finish.
 
 
 # Function to receive message from current client AND
